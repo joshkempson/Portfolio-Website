@@ -25,13 +25,12 @@ const projects = [
 ]
 
 const Card = ({ title, descr, imgUrl }) => {
-    const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <motion.div transition={{layout: {duration: 0.7}}} layout className='project-card' whileHover={{ scale: 1.05 }} onClick={() => setIsOpen(!isOpen)}>
-            <motion.img transition={{layout: {duration: 0.7}}} layout src={imgUrl} alt="" />
-            <motion.h2 transition={{layout: {duration: 0.7}}} layout>{title}</motion.h2>
-            {isOpen && <motion.p transition={{layout: {duration: 0.7}}} layout>{descr}</motion.p>}
+        <motion.div className='project-card' whileHover={{ scale: 1.05 }} >
+            <motion.img src={imgUrl} alt="" />
+            <motion.h2>{title}</motion.h2>
+            <motion.p>{descr}</motion.p>
         </motion.div>
     );
 }
